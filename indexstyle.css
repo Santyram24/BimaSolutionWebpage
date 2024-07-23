@@ -1,0 +1,433 @@
+* {
+    background: black;
+	padding: 0%;
+	margin: 0%;
+	font-family: sans-serif;
+
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	height: 400px;
+	width: 100%;
+}
+
+.boxlogo {
+	display: flex;
+	background: white;
+	height: 300px;
+	width: 400px;
+}
+
+.logo {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 300px;
+	width: 100%;
+}
+
+.caja-texproducto {
+	height: auto;
+
+}
+
+.bloq1 {
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	background: white;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+}
+
+
+.bloq1div1 {
+	/* min-width: 250px; */
+	display: block;
+	position: colum;
+}
+
+.titulo {
+	color: gray;
+	text-shadow: 1px 2px 1px gainsboro;
+	font-family: serif;
+	font-size: 25px;
+	text-align: center;
+	background: white;
+	width: 300px;
+}
+
+.bloq11div2 {
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	background: white;
+	align-items: center;
+	width: 100%;
+	height: 300px;
+
+
+}
+
+.bloq1div2 {
+	flex-wrap: wrap;
+	background: white;
+	display: flex;
+
+	height: auto;
+
+}
+
+.imgprincipal {
+	
+	align-content: center;
+	background-repeat: no-repeat;
+	box-shadow: 2px 2px 8px 2px black;
+	background-size: contain;
+	height: 300px;
+	width: 100%
+}
+
+.bloq1div3 {
+	background: yellow;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: solid 1px black;
+	margin: 0px 0px 50px 0px;
+	height: 30px;
+	width: 200px;
+}
+
+.porcentaje {
+	background: transparent;
+}
+
+.bloq2 {
+	flex-wrap: wrap;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	background: white;
+	width: 100%;
+	height: auto;
+}
+
+.txtx6 {
+	display: ruby-text;
+	background: black;
+	padding-top: 2%;
+	height: 50px;
+	width: 100%;
+}
+
+.textx6 {
+	text-align: center;
+	color: white;
+}
+
+.titulox6 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 300px;
+	background: white;
+	font-size: 30px;
+	color: gray;
+}
+
+.cajatodosbtnx {
+	display: flex;
+	background: white;
+	width: 100%;
+	justify-content: center;
+}
+
+.fa-regular{
+    background: transparent;
+}
+
+.btnx6 {
+	border-radius: 10px;
+	font-family: serif;
+	font-size: 20px;
+	background: rgb(100, 243, 100);
+	color: black;
+	text-decoration: none;
+	align-content: center;
+	display: block;
+	outline: solid 2px black;
+	box-shadow: 1px 1px 1px 1px black;
+	text-align: center;
+	height: 50px;
+	width: 70%;
+}
+
+.txtx9 {
+	margin-top: 100px;
+	display: ruby-text;
+	background: black;
+	padding-top: 2%;
+	height: 50px;
+	width: 100%;
+}
+
+.textx9 {
+	text-align: center;
+	color: white;
+}
+
+.titulox9 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	height: 300px;
+	text-align: center;
+	font-size: 30px;
+	color: gray;
+}
+
+.btnx9 {
+	border-radius: 10px;
+	font-family: serif;
+	font-size: 20px;
+	background: rgb(100, 243, 100);
+	color: black;
+	text-decoration: none;
+	align-content: center;
+	display: block;
+	outline: solid 2px black;
+	box-shadow: 1px 1px 1px 1px black;
+	text-align: center;
+	height: 50px;
+	width: 70%;
+}
+
+.txtx12 {
+	margin-top: 100px;
+	display: ruby-text;
+	background: black;
+	padding-top: 2%;
+	height: 50px;
+	width: 100%;
+}
+
+.textx12 {
+	text-align: center;
+	color: white;
+}
+
+.titulox12 {
+	display: flex;
+	height: 300px;
+	align-items: center;
+	justify-content: center;
+	background: white;
+	text-align: center;
+	font-size: 30px;
+	color: gray;
+}
+
+.btnx12 {
+	border-radius: 10px;
+	font-family: serif;
+	font-size: 20px;
+	background: rgb(100, 243, 100);
+	color: black;
+	text-decoration: none;
+	align-content: center;
+	display: block;
+	outline: solid 2px black;
+	box-shadow: 1px 1px 1px 1px black;
+	text-align: center;
+	height: 50px;
+	width: 70%;
+}
+
+.footer {
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-top: 100px;
+	display: inline-flex;
+	width: 100%;
+	height: 300px;
+	background: black;
+}
+
+.espacio1 {
+	width: 300px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+}
+
+.estex {
+	margin: 20px 0px;
+}
+
+.espacio2 {
+	width: 300px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+}
+
+.espacio3 {
+    padding:80px 0px 50px 0px;
+	width: 300px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+}
+
+.logofusga {
+	display: flex;
+	margin: 5px 90px 40px 70px;
+	background-size: contain;
+	background-image: url(multimedia/Fusga.png);
+	height: 150px;
+	width: 150px;
+}
+
+
+
+.caja-barra {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    align-content: center;
+	
+}
+
+.progress-section {
+    height: 50px;
+    background-color: white;
+	margin-bottom: 20px;
+}
+
+.textporcen{
+	text-align: center;
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.progress-container {
+    width: 100%;
+    height: 50px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    overflow: hidden;
+	
+}
+
+.progress-bar {
+
+    height: 50px;
+    background-color: #4CAF50;
+    width: 50%;
+    transition: width 0.5s ease-in-out;
+    animation: progress-bar 2s ease-in-out;
+}
+
+.progress-percentage {
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+/* Estilos para pantallas de 375x667 px y menores */
+@media only screen and (max-width: 375px) {
+    /* Estilos para la sección header */
+    header {
+		
+        height: 200px;
+    }
+    .boxlogo {
+        height: 200px;
+        width: 100%;
+    }
+    .logo {
+        height: 200px;
+        
+    }
+    /* Estilos para la sección bloq1 */
+    .bloq1 {
+        height: 200px;
+		
+    }
+    .bloq1div1 {
+        width: auto;
+    }
+    
+    .titulo{
+        font-size:10px;
+        width: 300px;
+    }
+    .bloq1div2 {
+        width: auto;
+    }
+	.imgprincipal{
+		width: 290px;
+	}
+
+    .bloq1div3 {
+        width: 150px;
+        height: 20px;
+    }
+  
+    /* Estilos para la sección footer */
+    .footer {
+        height: 200px;
+    }
+    .espacio1 {
+        width: 200px;
+    }
+    .espacio2 {
+        width: 200px;
+    }
+    .espacio3 {
+        width: 200px;
+    }
+    /* Estilos para la sección logofusga */
+    .logofusga {
+		margin: auto;
+        height: 100px;
+        width: 100px;
+    }
+    /* Estilos para la sección caja-barra */
+    .caja-barra {
+		
+        height: 300px;
+    }
+    /* Estilos para la sección progress-section */
+    .progress-section {
+        height: 50px;
+    }
+    .progress-container {
+        height: 50px;
+    }
+    .progress-bar {
+        height: 50px;
+    }
+    .progress-percentage {
+        font-size: 20px;
+    }
+}
+
+

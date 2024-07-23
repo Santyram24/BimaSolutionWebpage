@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Términos y Condiciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .terms {
+      height: 300px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .checkbox-container input {
+      margin-right: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background-color: #ccc;
+    }
+    button:hover:enabled {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Términos y Condiciones</h1>
+    <div class="terms">
+      
+      <p>La Dinamica será realizado una vez se cumpla el 70% de los cupos, será únicamente en el territorio colombiano, para poder participar debes comprar 3 cupones como mínimo, el ganador será escogido por medio del resultado de la lotería de Bogotá en su premio mayor con los últimos 2 números y el número de la serie.</p>
+      
+      <p>El premio consiste en un apartamento de 60 mts cuadrados en obra gris totalmente nuevo + 50 millones para sus acabados + Ford f150 svt ligthnigth.</p>
+      <!-- Agregue más texto según sea necesario -->
+    </div>
+    <div class="checkbox-container">
+      <input type="checkbox" id="accept-terms">
+      <label for="accept-terms">Acepto los términos y condiciones</label>
+    </div>
+    <button id="proceed-button" disabled>Continuar</button>
+  </div>
+
+  <script>
+    document.getElementById('accept-terms').addEventListener('change', function() {
+      document.getElementById('proceed-button').disabled = !this.checked;
+    });
+
+    document.getElementById('proceed-button').addEventListener('click', function() {
+      window.location.href = 'x12.html'; // Cambiar a la URL deseada
+    });
+  </script>
+</body>
+</html>

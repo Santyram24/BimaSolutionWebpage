@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wompi Payment Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Media Query para dispositivos móviles */
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 10px;
+        max-width: 100%;
+      }
+      input[type="text"], input[type="email"], input[type="tel"], select {
+        padding: 8px;
+        font-size: 14px;
+      }
+      button {
+        padding: 12px;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pago con Wompi</h1>
+    <form id="wompi-form" action="https://checkout.wompi.co/p/" method="GET">
+      <!-- OBLIGATORIOS -->
+      <input type="hidden" name="public-key" value="pub_prod_duzvy0PnIgl7pRfUIQyiF7aAo5qOBaEj" />
+      <input type="hidden" name="currency" value="COP" />
+      <input type="hidden" name="amount-in-cents" value="4500000" />
+      <input type="hidden" name="reference" value="" />
+      <input type="hidden" name="signature:integrity" value="" />
+      <input type="hidden" name="redirect-url" value="https://www.bimasolutioninvest.com//" />
+
+      <!-- OPCIONALES -->
+      <input type="hidden" name="customer-data:email" value="" />
+      <input type="hidden" name="customer-data:full-name" value="" />
+      <input type="hidden" name="customer-data:legal-id" value="" />
+      <input type="hidden" name="customer-data:legal-id-type" value="" />
+      <input type="hidden" name="customer-data:phone-number" value="" />
+      <input type="hidden" name="customer-data:phone-number-prefix" value="" />
+
+      <!-- CAMPOS DE ENTRADA PARA EL USUARIO -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" required />
+
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" required />
+
+      <label for="document-type">Tipo de Documento:</label>
+      <select id="document-type" required>
+        <option value="CC">Cédula de Ciudadanía</option>
+        <option value="CE">Cédula de Extranjería</option>
+        <option value="DNI">Documento Nacional de Identidad</option>
+        <option value="NIT">Número de Identificación Tributaria</option>
+        <option value="PP">Pasaporte</option>
+        <option value="RG">Carteira de Identidade / Registro Geral</option>
+      </select>
+
+      <label for="document-number">Número de Documento:</label>
+      <input type="text" id="document-number" required />
+
+      <label for="phone-prefix">Prefijo de Teléfono:</label>
+      <input type="text" id="phone-prefix" required placeholder="+57" value="+57" readonly />
+
+      <label for="phone">Número de Teléfono:</label>
+      <input type="tel" id="phone" required />
+
+      <button type="submit">Pagar con Wompi</button>
+    </form>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        // Generar una referencia aleatoria
+        const reference = Math.random().toString(16).slice(2, 18);
+
+        // Generar el hash
+        const cadenaConcatenada =`${reference}4500000COPprod_integrity_XSwz3puKUtzW2IAUJNaBxM989TsqKTs8`;
+        const encondedText = new TextEncoder().encode(cadenaConcatenada);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", encondedText);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+
+        // Rellenar los campos del formulario
+        const form = document.getElementById('wompi-form');
+        form.querySelector('[name="reference"]').value = reference;
+        form.querySelector('[name="signature:integrity"]').value = hashHex;
+
+        // Validar y rellenar los campos opcionales antes de enviar el formulario
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+
+          const email = form.querySelector('#email').value;
+          const name = form.querySelector('#name').value;
+          const documentType = form.querySelector('#document-type').value;
+          const documentNumber = form.querySelector('#document-number').value;
+          const phonePrefix = form.querySelector('#phone-prefix').value;
+          const phone = form.querySelector('#phone').value;
+
+          if (!email || !name || !documentType || !documentNumber || !phonePrefix || !phone) {
+            alert('Por favor, complete todos los campos requeridos.');
+            return;
+          }
+
+          form.querySelector('[name="customer-data:email"]').value = email;
+          form.querySelector('[name="customer-data:full-name"]').value = name;
+          form.querySelector('[name="customer-data:legal-id"]').value = documentNumber;
+          form.querySelector('[name="customer-data:legal-id-type"]').value = documentType;
+          form.querySelector('[name="customer-data:phone-number"]').value = phone;
+          form.querySelector('[name="customer-data:phone-number-prefix"]').value = phonePrefix;
+
+          form.submit();
+        });
+
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+  </script>
+</body>
+</html>
